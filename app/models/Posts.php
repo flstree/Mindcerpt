@@ -15,15 +15,17 @@ class Posts extends Model {
     }
     
     public function publish_post($formData) {
-        $this->$user_id = session('userId');
-        $this->$title = $formData->post_title;
-        $this->$body = $formData->post_body;
-        $this->$category = $formData->post_category;
+        $user_id = session('userId');
+        $title = $formData->post_title;
+        $body = $formData->post_body;
+        $category = $formData->post_category;
 
-        if($this->save() == TRUE) {
-            return TRUE;
+        $result = $this->save() ;
+
+        if($result === true) {
+            return true;
         } else {
-            return FALSE;
+            return false;
         }
     }
 }

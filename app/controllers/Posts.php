@@ -19,12 +19,13 @@
             $data['postMessage'] = '';
 
             if(Request::get()->has_post()) {
-                $formData = (object)Request::get()->post();
-                var_dump($formData);
+                $formData = (object) Request::get()->post();
+                
+                //Testing out the $formData variable
+                App::debug($formData);
 
                 $result = $this->post->publish_post($formData);
-                // App::instantiate()->debug($this->post->publish_post($formData));
-                var_dump($result);
+                App::debug($result);
              
                 // if (empty($result)) {
                 //         $data['postMessage'] = 'error';

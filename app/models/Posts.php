@@ -1,11 +1,7 @@
 <?php 
 
 class Posts extends Model {
-    protected $user_id = '';
-    protected $title = '';
-    protected $body = '';
-    protected $category = '';
-
+    
     public function getAllPosts() {
         return $this->findall();
     }
@@ -15,11 +11,14 @@ class Posts extends Model {
     }
     
     public function publish_post($formData) {
-        $user_id = session('userId');
-        $title = $formData->post_title;
-        $body = $formData->post_body;
-        $category = $formData->post_category;
-
+        $this->user_id = session('userId');
+        $this->title = $formData->post_title;
+        $this->body = $formData->post_body;
+        $this->category = $formData->post_category;
+        
+        //Testing to show $this contains the desired variables (comment out this line for prod)
+        App::debug($this, true);
+        
         $result = $this->save() ;
 
         if($result === true) {

@@ -52,7 +52,7 @@
 
                 <!--Grid row-->
                 <div class="row mb-4 wow fadeIn">
-                    <?php $i = 0; ?>
+                    <?php $i = 0; $count = 0; ?>
                     <?php foreach ($posts as $post) :?>
                         <?php if($i = 0 || $i = 3 || $i = 6) :?>
                             <!--Grid column-->
@@ -82,13 +82,13 @@
                                 <div class="card-body">
                                     <h5 class="pink-text">
                                         <i class="fa fa-link pull-left"> <?php echo $post->category; ?></i> 
-                                        <i class="fa fa-clock-o pull-right"> <?php echo $post->updated_at;; ?></i>
+                                        <i class="fa fa-clock-o pull-right"> <?php echo date('d F Y', strtotime($post->updated_at)) ; ?></i>
                                     </h5><br>
                                     <!--Title-->
                                     <h4 class="card-title"><?php echo $post->title; ?></h4>
                                     <!--Text-->
                                     <p class="card-text"><?php echo substr($post->body, 0, 125) . '...'; ?></p>
-                                    <a href="<?php echo URL_ROOT . 'post/id/' . $post->id; ?>" class="btn btn-primary waves-effect waves-light">Read More 
+                                    <a href="<?php echo URL_ROOT . 'posts/id/' . $post->id; ?>" class="btn btn-primary waves-effect waves-light">Read More 
                                         <i class="fa fa-play ml-2"></i>
                                     </a>
                                 </div>
@@ -99,207 +99,18 @@
 
                         </div>
                         <!--Grid column-->
-                        <?php $i++; ?>
-                    <?php endforeach; ?>
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <!--Card-->
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="https://res.cloudinary.com/dingeoc/image/upload/v1538658686/3.jpg" class="img-fluid" alt="Material Design for Bootstrap - example photo">
-                            <a>
-                                <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <h5 class="pink-text">
-                                <i class="fa fa-link pull-left"> Category</i> 
-                                <i class="fa fa-clock-o pull-right"> Time</i>
-                            </h5><br>
-                            <!--Title-->
-                            <h4 class="card-title">Story Title</h4>
-                            <!--Text-->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                                ut aliquid ex ea commodi.</p>
-                            <a class="btn btn-primary waves-effect waves-light">Read More 
-                                <i class="fa fa-play ml-2"></i>
-                            </a>
-                        </div>
-                        <!--/.Card content-->
-
-                    </div>
-                    <!--/.Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <!--Card-->
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="img/sample.jpg" class="img-fluid" alt="Material Design for Bootstrap - example photo">
-                            <a>
-                                <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <h5 class="pink-text">
-                                <i class="fa fa-link pull-left"> Category</i> 
-                                <i class="fa fa-clock-o pull-right"> Time</i>
-                            </h5><br>
-                            <!--Title-->
-                            <h4 class="card-title">Story Title</h4>
-                            <!--Text-->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                                ut aliquid ex ea commodi.</p>
-                            <a class="btn btn-primary waves-effect waves-light">Read More 
-                                <i class="fa fa-play ml-2"></i>
-                            </a>
-                        </div>
-                        <!--/.Card content-->
-
-                    </div>
-                    <!--/.Card-->
-
-                    </div>
-                    <!--Grid column-->
+                        <?php if($count == 8) {
+                            unset($i);
+                            unset($count);
+                            break;
+                        } ?>
+                        <?php $i++; $count++; ?>
+                    <?php endforeach; ?>                    
 
                 </div>
                 <!--Grid row-->
 
-                <!--Grid row-->
-                <div class="row mb-4 wow fadeIn">
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-
-                        <!--Card-->
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="img/sample.jpg" class="img-fluid" alt="Material Design for Bootstrap - example photo">
-                            <a>
-                                <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <h5 class="pink-text">
-                                <i class="fa fa-link pull-left"> Category</i> 
-                                <i class="fa fa-clock-o pull-right"> Time</i>
-                            </h5><br>
-                            <!--Title-->
-                            <h4 class="card-title">Story Title</h4>
-                            <!--Text-->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                                ut aliquid ex ea commodi.</p>
-                            <a class="btn btn-primary waves-effect waves-light">Read More 
-                                <i class="fa fa-play ml-2"></i>
-                            </a>
-                        </div>
-                        <!--/.Card content-->
-
-                    </div>
-                    <!--/.Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <!--Card-->
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="img/sample.jpg" class="img-fluid" alt="Material Design for Bootstrap - example photo">
-                            <a>
-                                <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <h5 class="pink-text">
-                                <i class="fa fa-link pull-left"> Category</i> 
-                                <i class="fa fa-clock-o pull-right"> Time</i>
-                            </h5><br>
-                            <!--Title-->
-                            <h4 class="card-title">Story Title</h4>
-                            <!--Text-->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                                ut aliquid ex ea commodi.</p>
-                            <a class="btn btn-primary waves-effect waves-light">Read More 
-                                <i class="fa fa-play ml-2"></i>
-                            </a>
-                        </div>
-                        <!--/.Card content-->
-
-                    </div>
-                    <!--/.Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-6 mb-4">
-
-                        <!--Card-->
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-                        <div class="view overlay">
-                            <img src="img/sample.jpg" class="img-fluid" alt="Material Design for Bootstrap - example photo">
-                            <a>
-                                <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <h5 class="pink-text">
-                                <i class="fa fa-link pull-left"> Category</i> 
-                                <i class="fa fa-clock-o pull-right"> Time</i>
-                            </h5><br>
-                            <!--Title-->
-                            <h4 class="card-title">Story Title</h4>
-                            <!--Text-->
-                            <p class="card-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi
-                                ut aliquid ex ea commodi.</p>
-                            <a class="btn btn-primary waves-effect waves-light">Read More 
-                                <i class="fa fa-play ml-2"></i>
-                            </a>
-                        </div>
-                        <!--/.Card content-->
-
-                    </div>
-                    <!--/.Card-->
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
+                
 
                 <!--Pagination-->
                 <nav class="d-flex justify-content-center wow fadeIn">

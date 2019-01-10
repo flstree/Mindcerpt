@@ -11,7 +11,7 @@
 
                         <!--Card image-->
                         <div class="view overlay">
-                            <img src="img/sample.jpg" class="img-fluid" alt="Material Design for Bootstrap - example photo" style="background: fixed center no-repeat url(img/bg.jpg); background-size: cover;">
+                            <img src="https://res.cloudinary.com/dingeoc/image/upload/v1538658685/13.jpg" class="img-fluid" alt="Material Design for Bootstrap - example photo" style="background: fixed center no-repeat url(img/bg.jpg); background-size: cover;">
                             <a>
                                 <div class="mask rgba-white-slight waves-effect waves-light"></div>
                             </a>
@@ -24,7 +24,7 @@
                                 <strong><?php echo $post->title; ?></strong>
                             </h4>
                             <h5 class="indigo-text">
-                                <strong>category:<?php echo $post->category; ?>Time:<?php echo $post->updated_at; ?></strong>
+                                <strong>category:<?php echo $post->category; ?>Time:<?php echo date('d F Y', strtotime($post->updated_at)) ; ?></strong>
                             </h5>
                             <p class="card-text"></p>
                         </div>
@@ -74,12 +74,12 @@
                     <div class="row">
                         <!-- Avatar -->
                         <div class="col-12 col-md-2 mb-md-0 mb-4">
-                            <img src="./Bootstrap Components - visual guide to components of Bootstrap 4 - Material Design for Bootstrap_files/img (8).jpg" class="img-fluid rounded-circle z-depth-2 avatar">
+                            <img src="https://res.cloudinary.com/dingeoc/image/upload/v1538658679/1.jpg" class="img-fluid rounded-circle z-depth-2 avatar">
                         </div>
                         <!-- Author Data -->
                         <div class="col-12 col-md-10">
                             <h5 class="font-weight-bold dark-grey-text mb-3">
-                                <strong>John Doe</strong>
+                                <strong><?php echo $authorData->name; ?></strong>
                             </h5>
                             <div class="personal-sm pb-3">
                                 <a class="pr-2 email-ic">
@@ -98,11 +98,7 @@
                                     <i class="fa fa-linkedin mr-2"> </i>
                                 </a>
                             </div>
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint esse nulla quia quam veniam commodi
-                                dicta, iusto inventore. Voluptatum pariatur eveniet ea, officiis vitae praesentium beatae quas
-                                libero, esse facere.
-                            </p>
+                            <p><?php echo $authorData->about; ?></p>
                         </div>
                     </div>
                 </div>
@@ -123,7 +119,7 @@
                     <div class="row mb-4">
                         <!--Image column-->
                         <div class="col-sm-2 col-12 mb-md-0 mb-3">
-                            <img src="./Bootstrap Components - visual guide to components of Bootstrap 4 - Material Design for Bootstrap_files/img (27).jpg" class="avatar rounded-circle z-depth-1-half">
+                            <img src="https://res.cloudinary.com/dingeoc/image/upload/v1538658679/1.jpg" class="avatar rounded-circle z-depth-1-half">
                         </div>
                         <!--/.Image column-->
                         <!--Content column-->
@@ -148,7 +144,7 @@
                     <div class="row mb-4">
                         <!--Image column-->
                         <div class="col-sm-2 col-12 mb-md-0 mb-3">
-                            <img src="./Bootstrap Components - visual guide to components of Bootstrap 4 - Material Design for Bootstrap_files/img (1).jpg" class="avatar rounded-circle z-depth-1-half">
+                            <img src="https://res.cloudinary.com/dingeoc/image/upload/v1538658681/4.jpg" class="avatar rounded-circle z-depth-1-half">
                         </div>
                         <!--/.Image column-->
                         <!--Content column-->
@@ -173,7 +169,7 @@
                     <div class="row mb-4">
                         <!--Image column-->
                         <div class="col-sm-3 col-md-2 col-12 mb-md-0 mb-3">
-                            <img src="./Bootstrap Components - visual guide to components of Bootstrap 4 - Material Design for Bootstrap_files/img (31).jpg" class="avatar rounded-circle z-depth-1-half">
+                            <img src="https://res.cloudinary.com/dingeoc/image/upload/v1538658679/1.jpg" class="avatar rounded-circle z-depth-1-half">
                         </div>
                         <!--/.Image column-->
                         <!--Content column-->

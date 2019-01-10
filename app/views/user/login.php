@@ -1,4 +1,6 @@
 <main class="mt-5 pt-5 col-md-6">
+    <h2>Login</h2>
+    <hr>
     <p style="color: red;"><?php if ($loginError !=  '') echo $loginError; ?></p>
     <br>
     <form role="form" enctype="multipart/form-data" method="post" action="<?php echo URL_ROOT; ?>user/validate">

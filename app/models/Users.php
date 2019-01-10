@@ -1,8 +1,8 @@
 <?php 
 
   class Users extends Model {
-    public function getUserData() {
-
+    public function getUserData($id) {
+      return $this->findbyid($id);
     }
 
     public function register() {

@@ -14,7 +14,7 @@
      /**
       * Load a new model class
       * @param String $model Gets the required model class
-      * @return Model new $model() returns the called model classs
+      * @return Model new $model() returns the called model class
       */
      protected function model($model = ''){
       //Checks if $model is set 

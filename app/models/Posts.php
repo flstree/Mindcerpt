@@ -17,7 +17,7 @@ class Posts extends Model {
         $this->category = $formData->post_category;
         
         //Testing to show $this contains the desired variables (comment out this line for prod)
-        App::debug($this, true);
+        // App::debug($this);
         
         $result = $this->save() ;
 

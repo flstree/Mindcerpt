@@ -1,7 +1,11 @@
 <main class="mt-5 pt-5 col-md-6">  
     <h2>Create a Post</h2>
     <hr>
-    <p style="color: red;"><?php if ($postMessage !=  '') echo $loginMessage; ?></p>
+    <?php if ($postMessage ==  'success'): ?>
+        <p style="color: green;">Success! Your Post has been published.</p>
+    <?php elseif ($postMessage == 'error'): ?>
+        <p style="color: green;">Oops! Something went wrong.</p>
+    <?php endif; ?>
     <form role="form" enctype="multipart/form-data" method="post" action="<?php echo URL_ROOT; ?>posts/create">
         <div class="form-group">
             <label>Title</label>

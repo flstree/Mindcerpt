@@ -15,6 +15,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.min.css" rel="stylesheet">
+<link href="css/profile-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -55,6 +56,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link waves-effect" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link waves-effect" href="<?php echo URL_ROOT . 'user/profile/3'; ?>">Profile</a>
                         </li>
                         <?php if(has_session('userId')) : ?>
                             <li class="nav-item">

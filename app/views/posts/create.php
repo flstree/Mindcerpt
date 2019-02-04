@@ -21,4 +21,7 @@
         </div>
         <button name="submit" type="submit" class="btn btn-primary">Publish</button>
     </form>
+    <form role="form" enctype="multipart/form-data" method="" action="<?php echo URL_ROOT; ?>friend/requestFriend">
+        <button name="submit" type="submit" class="btn btn-primary">RequestFriend</button>
+    </form>
 </main>

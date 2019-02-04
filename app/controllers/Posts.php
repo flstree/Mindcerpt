@@ -41,6 +41,7 @@
                     $this->view('create', $data);
                 } else {
                     $data['postMessage'] = 'error';
+                    
                     $this->view('create', $data);
                 }
             }

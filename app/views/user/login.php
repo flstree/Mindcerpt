@@ -1,17 +1,25 @@
-<main class="mt-5 pt-5 col-md-6">
-    <h2>Login</h2>
-    <hr>
-    <p style="color: red;"><?php if ($loginError !=  '') echo $loginError; ?></p>
-    <br>
-    <form role="form" enctype="multipart/form-data" method="post" action="<?php echo URL_ROOT; ?>user/validate">
-        <div class="form-group">
-            <label>Email</label>
-            <input name="email" type="text" class="form-control" placeholder="">
+<div class="container">
+    <form class="form-signin">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="/docs/4.2/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">SEUSS</h1>
+            <small>Don't have an account? <a href="user/register">Register</a></small>
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input name="password" type="password" class="form-control" placeholder="">
+
+        <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         </div>
-        <button name="submit" type="submit" class="btn btn-primary">Login</button>
+
+        <div class="form-label-group">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+            <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <!-- <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p> -->
     </form>
-</main>
+</div>

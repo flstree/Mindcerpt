@@ -4,17 +4,13 @@
 
     public function __construct(){
       //Define All required models here
-      $this->user = $this->model('Users');
-      $this->post = $this->model('Posts');
+      $this->mail = $this->model('Mailer');
     }
 
-
     public function index(){
-      $posts = $this->post->getAllPosts();
       $data = [
         'title' => 'Home Page'
       ];
-      $data['posts'] = $posts;
       $this->view('index', $data);
     }
 
@@ -28,5 +24,11 @@
 
     public function contact(){
       $this->view('contact');
+    }
+
+    public function mail(){
+      // $this->view('welcome');
+      $result = $this->mail->sendMail('aninye@ymail.com');
+      var_dump($result);
     }
   }

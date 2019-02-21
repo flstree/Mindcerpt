@@ -48,5 +48,11 @@
 
   //Database Password
   define('DB_PASS',  $password);
+
+  //Mail account email
+  define('EMAIL_ACCOUNT', $mailer_email);
+
+  //Email Password
+  define('EMAIL_PASSWORD', $mailer_password);
   
   unset($config);

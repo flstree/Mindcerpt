@@ -1,5 +1,5 @@
 <?php
-	
+
   class App {
 		private static $instance = NULL;
 	  protected $currentController = 'Home';
@@ -15,16 +15,16 @@
 	  
 	  private function __construct(){
 			$url = $this->getUrl();
-		  
+
 		  //Look in controllers for first value
-		  if(file_exists(APP_ROOT . 'controllers/'.ucwords($url[0]).'.php')){
-			  $this->currentController = ucwords($url[0]);
+		  if(file_exists(APP_ROOT . 'controllers/'. ucwords($url[0]) .'.php')){
+				$this->currentController = ucwords($url[0]);
 			  unset($url[0]);
 			}
 
-		  require_once(APP_ROOT . 'controllers/' . ucwords($this->currentController) . '.php');
-		  $this->currentController = $this->currentController . 'Controller';
-		  $this->currentController = new $this->currentController;
+			require_once(APP_ROOT . 'controllers/' . ucwords($this->currentController) . '.php');
+			$this->currentController = $this->currentController . 'Controller';
+			$this->currentController = new $this->currentController;
 		  
 		  //Check for Controller Method
 		  if(isset($url[1])){
@@ -55,12 +55,16 @@
 		 * @param Mixed $test Data for testing
 		 * @param Boolean $die End code execution
 		 */
-		public static function debug($test, $die = false){
+		public static function debug($test = 'No param passed', $die = false){
 			print_r("<pre>");
 			print_r($test);
 			print_r("</pre>");
 			if($die == true){
 				die();
 			}
+		}
+
+		public static function widget($name = '', $params = []){
+			return Widget::init()->run($name, $params);
 		}
 	}

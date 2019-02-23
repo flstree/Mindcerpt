@@ -2,7 +2,6 @@
   /**
    * Base Model Class
    */
-
    class Model {
      protected $table = '';
      protected $db;
@@ -122,7 +121,7 @@
       }
 
       if($this->db->execute()){
-        return $this->db->execute();
+        return true;
       }
       return false;
     }

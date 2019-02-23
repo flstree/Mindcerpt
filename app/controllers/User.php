@@ -1,42 +1,39 @@
 <?php 
 
-    class UserController extends Controller {
-        public function __construct() {
-            //Define All required models here
-            $this->userModel = $this->model('Users');
+class UserController extends Controller {
+    public function __construct(){
+        //Define All required models here
+        $this->user = $this->model('users');
+    }
 
-        }
+    public function index() {
 
-        public function validate() {
-            if(Request::get()->has_post()) {
-                $formData = (object)Request::get()->post();
+    }
 
-                $result = $this->userModel->validateLogin($formData);
+    public function login() {
+        $this->view('login');
+    }
 
-                if (empty($result)) {
-                    $data['loginError'] = 'Oops! Wrong email or password';
-                    $this->view('login', $data);
-                } else {
-                    $userId = $result[0]->id;
+    public function register() {
+        $data = [
+            'results'         => '',
+            'formData'        => '',
+            'registerSuccess' => ''
+        ];
+        if (Request::get()->has_post()) {
+            $formData = Request::get()->post();
+            $result = $this->user->valdateRegistration($formData);
 
-                    session('userId', $userId);
-
-                    $this->redirect(URL_ROOT . './home/index');
-                }
+            if ($result === true) {
+                $data['registerSuccess'] = 'success';
+                $this->redirect('register',$data);
             } else {
-                $this->view('error/index', $data);
+                $data['results'] = $result;
+                $data['formData'] = (object)$formData;
+                $this->redirect('register',$data);
             }
-        }
-
-        public function login() {
-            $data['loginError'] = '';
-            
-            $this->view('login', $data);
-        }
-
-        public function logout() {
-            flash('userId');
-
-            $this->redirect(URL_ROOT . './home/index');
+        } else{
+            $this->view('register', $data);
         }
     }
+}

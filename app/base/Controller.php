@@ -14,7 +14,7 @@
      /**
       * Load a new model class
       * @param String $model Gets the required model class
-      * @return Model new $model() returns the called model class
+      * @return Model new $model() returns the called model classs
       */
      protected function model($model = ''){
       //Checks if $model is set 
@@ -114,6 +114,7 @@
        //Check if file path exists in the views folder
        if(file_exists($content)){
          require_once APP_ROOT . 'views/_layout/' . $this->layout . '.php';
+         
          exit();
        }
        else {
